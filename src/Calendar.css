@@ -27,6 +27,7 @@ div {
 }
 .cell {
   display: inline-block;
+  position: relative;
   width: 14.28%;
   height: 18px;
   text-align: center;
@@ -36,4 +37,37 @@ div {
 }
 .weekend {
   color: #0a84ad;
+}
+.picker {
+  z-index: 100;
+  position: absolute;
+  top: -34px;
+  width: 250px;
+  left: -112px;
+  font-size: 18px;
+	background: #88b7d5;
+	border: 2px solid #c2e1f5;
+}
+.picker:after, .picker:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.picker:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #88b7d5;
+	border-width: 6px;
+	margin-left: -6px;
+}
+.picker:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #c2e1f5;
+	border-width: 9px;
+	margin-left: -9px;
 }

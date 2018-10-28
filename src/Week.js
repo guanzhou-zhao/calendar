@@ -2,9 +2,35 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 class Week extends Component {
+  constructor(props) {
+    super(props);
 
+    this.onCellClick = this.onCellClick.bind(this);
+  }
+  getCategoryPicker(dayPicking, today) {
+    let categoryPicker = null;
+    if(dayPicking) {
+      if (today.isSame(dayPicking)) {
+        categoryPicker = (
+          <div className="picker">
+            <button className="holiday">Holiday</button>
+            <button className="birthday">Birthday</button>
+            <button className="busy">Busy</button>
+            <button className="anniversary">Anniversary</button>
+          </div>
+        );
+      }
+    }
+    return categoryPicker;
+  }
+  onCellClick(day) {
+    return () => {
+      this.props.handleChangingCategoryClick(day);
+    }
+  }
   render() {
     let daysOfWeek = this.props.week.daysOfWeek;
+    let dayOfChangingCategory = this.props.dayOfChangingCategory;
     let days = [];
 
     // Fill empty cell before first day of month when needed
@@ -24,7 +50,12 @@ class Week extends Component {
       currentDayClass = day.isSame(today) ? ' current-day' : '';
       weekendClass = day.day()===0 || day.day()===6 ? ' weekend' : '';
       days.push(
-        <div className={'cell' + currentDayClass + weekendClass} key={day.date()}>{day.date()}</div>
+        <div
+        className={'cell' + currentDayClass + weekendClass}
+        onClick={this.onCellClick(day)}
+        key={day.date()}>
+          {day.date()}{this.getCategoryPicker(dayOfChangingCategory, day)}
+        </div>
       );
     })
 
