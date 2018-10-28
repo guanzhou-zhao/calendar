@@ -5,15 +5,15 @@ class Month extends Component {
 
   render() {
     let month = this.props.month;
-    let dayOfChangingCategory = this.props.dayOfChangingCategory;
-    let handleChangingCategoryClick = this.props.handleChangingCategoryClick;
     let weeks = [];
     month.weeksOfMonth.forEach((week, index) => {
       weeks.push(
         <Week
           week={week}
-          dayOfChangingCategory={dayOfChangingCategory}
-          handleChangingCategoryClick={handleChangingCategoryClick}
+          events={this.props.events}
+          dayOfChangingCategory={this.props.dayOfChangingCategory}
+          handleChangingCategoryClick={this.props.handleChangingCategoryClick}
+          handleChangingCategory={this.props.handleChangingCategory}
           key={index}
         />
       );

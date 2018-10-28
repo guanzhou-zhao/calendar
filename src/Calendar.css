@@ -71,3 +71,18 @@ div {
 	border-width: 9px;
 	margin-left: -9px;
 }
+.category {
+  margin-right: 2px;
+}
+.holiday {
+  background-color: #3bff00;
+}
+.birthday {
+  background-color: #ff9d00;
+}
+.busy {
+  background-color: #ff0033;
+}
+.anniversary {
+  background-color: #bf00ff;
+}
