@@ -31,11 +31,11 @@ class Navigation extends Component {
     );
     return (
       <div className="nav">
-        <button onClick={()=>handleYearDisplayingChange(currentYearNum)}> Go To Current Year </button>
+        <button className="current-year-button" onClick={()=>handleYearDisplayingChange(currentYearNum)}> Go To Current Year </button>
         {prevYear}
         {currentYear}
         {nextYear}
-        <input onChange={this.handleInputChange} type="number" min="1" max="3999" step="1" value={yearDisplaying} />
+        <input className="year-input" onChange={this.handleInputChange} type="number" min="1" max="3999" step="1" value={yearDisplaying} />
       </div>
     );
   }

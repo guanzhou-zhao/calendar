@@ -86,3 +86,23 @@ div {
 .anniversary {
   background-color: #bf00ff;
 }
+.nav {
+  width: 500px;
+  margin: auto;
+  color: #529ab2;
+}
+.year-number {
+  padding: 2px 10px;
+  display: inline-block;
+}
+.current-year-button {
+  width: 150px;
+  margin-right: 40px;
+}
+.year-number.displaying {
+  background-color: #e3e8ea;
+}
+.year-input {
+  width: 40px;
+  margin-left: 40px;
+}

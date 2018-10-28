@@ -76,7 +76,7 @@ class Calendar extends Component {
   }
   render() {
     let months = [];
-    calendarData.forEach((month, index) => {
+    calendarData(this.state.yearDisplaying).forEach((month, index) => {
       months.push(
         <Month
           month={month}
