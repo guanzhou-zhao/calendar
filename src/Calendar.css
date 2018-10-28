@@ -1,0 +1,39 @@
+div {
+  box-sizing: border-box;
+}
+.calendar {
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.month {
+  display: inline-block;
+  margin-top: 0px;
+  width: 33%;
+  height: 140px;
+}
+.month .title {
+  text-align: center;
+  margin: 2px;
+  color: #529ab2;
+}
+.month .week.head .cell{
+  color: #9fa0a0;
+  background-color: #e3e8ea;
+}
+.week {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.cell {
+  display: inline-block;
+  width: 14.28%;
+  height: 18px;
+  text-align: center;
+}
+.current-day {
+  background-color: #9ec8d6;
+}
+.weekend {
+  color: #0a84ad;
+}
